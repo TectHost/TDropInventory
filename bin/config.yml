@@ -1,0 +1,14 @@
+drops:
+  STONE: COBBLESTONE
+  IRON_ORE: IRON_INGOT
+  GOLD_ORE: GOLD_INGOT
+  
+worlds:
+  - world
+  - world_nether
+  
+messages:
+  reload: "&5TDropInventory &e> &aConfiguration reloaded."
+  no-permission: "&5TDropInventory &e> &cYou don't have permission to use this command."
+
+  

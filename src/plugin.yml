@@ -1,0 +1,8 @@
+name: TDropInventory
+main: minealex.tdropinventory.TDropInventory
+version: 1.0
+api-version: 1.8
+
+commands:
+  tdi:
+    description: Reload the DropInventory config
