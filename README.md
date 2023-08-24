@@ -7,9 +7,11 @@ Simple custom drops to inventory plugin
 
 # Commands
 - /tdi reload
+- /tdi version
 
 # Permissions
 - tdi.reload
+- tdi.version
 
 # Dependencies
 - None
