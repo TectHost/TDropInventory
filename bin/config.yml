@@ -10,5 +10,6 @@ worlds:
 messages:
   reload: "&5TDropInventory &e> &aConfiguration reloaded."
   no-permission: "&5TDropInventory &e> &cYou don't have permission to use this command."
+  version: "&5TDropInventory &e> &aPlugin version: %version%"
 
   
