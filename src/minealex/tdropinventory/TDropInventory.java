@@ -30,20 +30,24 @@ public class TDropInventory extends JavaPlugin implements Listener {
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
         String worldName = event.getBlock().getWorld().getName();
-        
+
         if (!allowedWorlds.contains(worldName)) {
-            return; // Don't proceed if the world isn't allowed
+            return; // No proceder si el mundo no está permitido
         }
 
         Material blockType = event.getBlock().getType();
-        String dropTypeStr = config.getString("drops." + blockType.name());
+        String dropTypeStr = config.getString("drops." + blockType.name().toLowerCase()); // Convertir a minúsculas
 
         if (dropTypeStr != null) {
-            Material dropType = Material.valueOf(dropTypeStr);
+            Material dropType = Material.matchMaterial(dropTypeStr.toUpperCase()); // Utiliza Material.matchMaterial para obtener el Material
 
-            event.setCancelled(true);
-            event.getBlock().setType(Material.AIR);
-            event.getPlayer().getInventory().addItem(new ItemStack(dropType));
+            if (dropType != null) {
+                event.setCancelled(true);
+                event.getBlock().setType(Material.AIR);
+                event.getPlayer().getInventory().addItem(new ItemStack(dropType));
+            } else {
+                getLogger().warning("Material " + dropTypeStr + " no encontrado. Asegúrate de que sea válido.");
+            }
         }
     }
 }
